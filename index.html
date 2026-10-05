@@ -182,7 +182,7 @@
   .cutscene .cs-art { margin: 0 auto 4px; width: 100%; max-width: 420px; color: var(--cs-muted); }
   .cutscene .cs-art svg { display: block; width: 100%; height: 96px; }
   .cutscene .cs-art .soft { fill: var(--cs-card); }
-  .cutscene .cs-art .paper { fill: #2d2526; }
+  .cutscene .cs-art .paper { fill: #22394a; }
   .cs-art-ballot { margin: 0 auto; }
   /* Real pictures in the cut scenes and the press room (batch 2, 4 Oct 2026); the drawn placeholders keep the rules above. */
   .cutscene .cs-art img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45); }
@@ -649,8 +649,9 @@
   .notice-line span { font-size: 20px; line-height: 1; }
 
   /* ---- the cut scene after each session ---- */
-  .cutscene { --cs-bg: #161112; --cs-ink: #f6f1f0; --cs-muted: #a89c9d; --cs-line: #3a3132; --cs-up: #4cc07e; --cs-down: #f07a80; --cs-card: #211a1b;
-    position: fixed; inset: 0; z-index: 30; overflow-y: auto; background: radial-gradient(120% 80% at 50% 0%, #3a1418 0%, var(--cs-bg) 60%);
+  /* The cut scenes in the art bible's ink blue, with teal for progress and actions (decided 5 Oct). */
+  .cutscene { --cs-bg: #0f1d28; --cs-ink: #f2ebdd; --cs-muted: #a3b0b9; --cs-line: #2c4150; --cs-up: #5cc08a; --cs-down: #ef8a7f; --cs-card: #172b3a;
+    position: fixed; inset: 0; z-index: 30; overflow-y: auto; background: radial-gradient(120% 80% at 50% 0%, #234257 0%, var(--cs-bg) 60%);
     color: var(--cs-ink); display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; gap: 14px;
     padding: calc(14px + env(safe-area-inset-top, 0px)) 16px calc(16px + env(safe-area-inset-bottom, 0px)); }
   .cutscene > * { width: 100%; max-width: 560px; margin: 0 auto; }
@@ -660,8 +661,8 @@
   .cs-step { background: none; border: none; border-top: 3px solid var(--cs-line); border-radius: 0; color: var(--cs-muted); font-size: 12px; padding: 6px 0 0; text-align: left; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   /* Many steps on a narrow phone: the bars stay, only the current step keeps its name (5 Oct 2026). */
   @media (max-width: 480px) { .cs-steps:has(> :nth-child(6)) .cs-step:not(.here) { color: transparent; } .cs-steps:has(> :nth-child(6)) .cs-step.here { overflow: visible; } }
-  .cs-step.done { border-top-color: #8a2a33; color: var(--cs-ink); }
-  .cs-step.here { border-top-color: #e5535d; color: var(--cs-ink); }
+  .cs-step.done { border-top-color: #2a5c5b; color: var(--cs-ink); }
+  .cs-step.here { border-top-color: #4fb3ad; color: var(--cs-ink); }
   /* The media exposure scene (4 Oct 2026): each outlet keeps its own look (the art bible's fictional outlets). */
   .cs-media { display: grid; gap: 14px; }
   .media-card { border-radius: 12px; overflow: hidden; background: #f2ebdd; color: #172b3a; border: 1px solid #d9cdb5; animation: cs-in 0.45s ease-out both; animation-delay: var(--d, 0s); }
@@ -690,7 +691,7 @@
   .profile-figure .advisor-picture { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: bottom; }
   .serves { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 13px; margin-top: 2px; }
   /* A full-body picture full screen (5 Oct 2026): a tap anywhere closes it. */
-  .lightbox { position: fixed; inset: 0; z-index: 80; background: rgba(14, 12, 13, 0.94); display: flex; flex-direction: column; align-items: center;
+  .lightbox { position: fixed; inset: 0; z-index: 80; background: rgba(15, 29, 40, 0.94); display: flex; flex-direction: column; align-items: center;
     justify-content: center; gap: 10px; padding: 16px; cursor: zoom-out; }
   .lightbox .lightbox-figure { flex: none; max-width: none; }
   .lightbox-card { padding: 12px; border-radius: 14px; background: radial-gradient(80% 60% at 50% 70%, #efe6d4 0%, #e3d8c3 100%); line-height: 0; }
@@ -780,7 +781,7 @@
   .cs-lb-list .cs-rift { display: block; font-size: 11px; color: var(--cs-down); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .cs-lb-list b { font-variant-numeric: tabular-nums; }
   .cs-lb-list.top b { color: var(--cs-up); } .cs-lb-list.bottom b { color: var(--cs-down); }
-  .cs-lb-list li.mine { font-weight: 700; color: #ff9aa0; }
+  .cs-lb-list li.mine { font-weight: 700; color: #7fcfc8; }
   .cs-legend { font-size: 12px; color: var(--cs-muted); display: flex; align-items: center; gap: 6px; }
   .cs-legend-tick { display: inline-block; width: 2px; height: 14px; background: var(--cs-ink); opacity: 0.85; }
   .cs-poll-row .party-tag { color: var(--cs-ink); min-width: 0; }
@@ -793,17 +794,17 @@
   .cs-rank { display: grid; gap: 4px; padding: 16px; border-radius: 14px; background: var(--cs-card); border: 1px solid var(--cs-line); }
   .cs-rank-line small { font-size: 16px; color: var(--cs-muted); }
   .cs-risk { font-size: 15px; font-weight: 600; padding: 12px 14px; border-radius: 12px; }
-  .cs-risk.danger { background: rgba(240,122,128,0.15); color: var(--cs-down); }
-  .cs-risk.safe { background: rgba(76,192,126,0.12); color: var(--cs-up); }
+  .cs-risk.danger { background: rgba(239,138,127,0.15); color: var(--cs-down); }
+  .cs-risk.safe { background: rgba(92,192,138,0.12); color: var(--cs-up); }
   .cs-lede { font-size: 16px; line-height: 1.45; color: var(--cs-ink); opacity: 0.85; }
   .cs-intro { justify-items: center; text-align: center; align-content: center; min-height: 52vh; }
   .cs-intro .cs-title { font-size: clamp(32px, 10vw, 48px); }
   .cs-ballot { width: 120px; height: 110px; overflow: visible; }
-  .cs-ballot .box { fill: #3a1418; stroke: #e5535d; stroke-width: 2.5; }
-  .cs-ballot .slot { fill: #0d0909; }
-  .cs-ballot .band { stroke: #e5535d; stroke-width: 3; stroke-linecap: round; opacity: 0.6; }
-  .cs-ballot .paper { fill: #f6f1f0; }
-  .cs-ballot .paper-lines { stroke: #a89c9d; stroke-width: 3; stroke-linecap: round; }
+  .cs-ballot .box { fill: #172b3a; stroke: #4fb3ad; stroke-width: 2.5; }
+  .cs-ballot .slot { fill: #08121a; }
+  .cs-ballot .band { stroke: #4fb3ad; stroke-width: 3; stroke-linecap: round; opacity: 0.6; }
+  .cs-ballot .paper { fill: #f2ebdd; }
+  .cs-ballot .paper-lines { stroke: #a3b0b9; stroke-width: 3; stroke-linecap: round; }
   .cs-ballot .drop { animation: cs-drop 1.4s cubic-bezier(.5,0,.7,.4) 0.3s forwards; }
   @keyframes cs-drop { 0% { transform: translateY(-14px); opacity: 0; } 25% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(46px); opacity: 1; } }
   .cs-motions { display: grid; gap: 10px; }
@@ -838,7 +839,7 @@
   .cs-hemi .seat { stroke: var(--cs-bg); }
   .cs-hemi p { font-size: 12px; color: var(--cs-muted); }
   .cs-actions button { width: 100%; padding: 15px; font-size: 16px; }
-  .cutscene .cs-actions .primary { background: #e5535d; border-color: #e5535d; color: #1a0d0e; }
+  .cutscene .cs-actions .primary { background: #276d6b; border-color: #276d6b; color: #ffffff; }
   @media (prefers-reduced-motion: reduce) { .cs-scene, .cs-motion, .cs-stamp, .cs-ballot .drop { animation: none; opacity: 1; } .cs-track .fill, .cs-meter .fill { transition: none; } }
 </style>
 </head>
