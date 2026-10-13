@@ -618,11 +618,21 @@
   .rooms.lowered .room-advisor { --fig-h: min(250px, 34vh); }
   .rooms.lowered .room-advisor.duo { --fig-h: min(210px, 30vh); }
   .rooms.lowered .room-advisor-lines { max-width: calc(100% - min(220px, 25vh) - 8px); }
+  /* With the sheet down and two speakers (the owner's report of 13 Oct 2026: the bubbles still crowded out the people):
+     the people stand larger at either side, and their lines float above their heads, comic-style. Each line leans to its
+     speaker and points down at them; the upper line is the left figure's, the lower the right figure's. */
+  .rooms.lowered .room-advisor.duo { --fig-h: min(270px, 38vh); }
+  .rooms.lowered .room-advisor.duo .room-advisor-lines { left: 10px; right: 10px; max-width: none; bottom: calc(var(--fig-h) * 0.9 - 6px); gap: 10px; }
+  .rooms.lowered .room-advisor.duo .room-advisor-says { max-width: 74%; }
+  .rooms.lowered .room-advisor.duo .room-advisor-says b { letter-spacing: 0.04em; }
+  .rooms.lowered .room-advisor.duo .room-advisor-says::after { top: auto; bottom: -15px; border-width: 15px 8px 0; border-color: rgba(242, 235, 221, 0.96) transparent transparent; }
+  .rooms.lowered .room-advisor.duo .says-1::after { left: 26px; right: auto; }
+  .rooms.lowered .room-advisor.duo .says-0::after { right: 26px; left: auto; }
   @media (max-height: 700px) {
     .room-advisor-says { font-size: 12.5px; } .room-advisor-lines { bottom: 22px; }
     .room-advisor.duo .room-advisor-lines { bottom: 14px; gap: 4px; } .room-advisor.duo .room-advisor-says { padding: 6px 10px; line-height: 1.3; }
     .room-advisor.duo .room-advisor-says b { font-size: 10px; }
-    .rooms.lowered .room-advisor-lines { bottom: 40px; } .rooms.lowered .room-advisor.duo .room-advisor-lines { bottom: 32px; }
+    .rooms.lowered .room-advisor-lines { bottom: 40px; }
   }
   .press-row button { justify-self: start; }
 
