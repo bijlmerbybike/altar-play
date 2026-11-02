@@ -208,6 +208,10 @@
   .sheet-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,0.45); display: flex; align-items: flex-end; justify-content: center; }
   .sheet { width: 100%; max-width: 560px; max-height: 88vh; overflow-y: auto; background: var(--surface); color: var(--ink); border-radius: 18px 18px 0 0; padding: 16px 16px 28px; box-shadow: 0 -8px 30px rgba(0,0,0,0.25); display: grid; gap: 10px; }
   .sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  /* The close button stays in view while a long page scrolls (the owner's bug report of 2 Nov 2026, 18:22): the head
+     sticks to the top of the sheet, and the sheet is measured on the screen that shows (dvh: without the browser's bars). */
+  .sheet { max-height: 88dvh; }
+  .sheet > .sheet-head { position: sticky; top: -16px; z-index: 3; margin: -16px -16px 0; padding: 16px 16px 6px; background: var(--surface); border-radius: 18px 18px 0 0; }
   .sheet-head h3 { margin: 0; font-size: 20px; }
   .sheet-close { width: 36px; height: 36px; border-radius: 50%; padding: 0; font-size: 22px; line-height: 1; }
   .profile-ranks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
